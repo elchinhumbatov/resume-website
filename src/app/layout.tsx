@@ -26,11 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="snap-y snap-mandatory">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
           <Navbar />
-          <main className="container mx-auto px-4 pt-[60px]">{children}</main>
+          <main className="container mx-auto px-4">{children}</main>
           <Footer />
         </Providers>
       </body>

@@ -1,17 +1,11 @@
-// import { Button } from "@heroui/react";
-// import Link from "next/link";
-
+import Hero from "@/components/sections/Hero";
+import MainAbout from "@/components/sections/MainAbout";
 
 export default function Home() {
   return (
-    <main className="flex items-center justify-center">
-      {/* <Button size="lg">
-        Test Button
-      </Button>
-      <h1 className="dark text-7xl font-bold underline">
-        Hello world!
-      </h1>
-      <Link href={'about'}>About</Link> */}
-    </main>
+    <section>
+      <Hero />
+      <MainAbout />
+    </section>
   );
 }
