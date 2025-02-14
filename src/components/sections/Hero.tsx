@@ -51,7 +51,7 @@ export default function Hero() {
           className="mt-6"
         >
           <Button size="lg">
-            <a href="/portfolio">View My Work</a>
+            <a href="/portfolio" color='primary'>View My Work</a>
           </Button>
         </motion.div>
       </motion.div>

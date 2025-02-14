@@ -17,7 +17,7 @@ const skills = [
 
 export default function MainAbout() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: '-70%' });
+  const isInView = useInView(ref, { margin: '-50%' });
 
   return (
     <section
@@ -28,7 +28,7 @@ export default function MainAbout() {
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.8 }}
-        className="text-3xl md:text-5xl mb-4 md:mb-9 font-extrabold"
+        className="text-4xl md:text-5xl mb-4 md:mb-9 font-extrabold"
       >
         About Me
       </motion.h2>
@@ -70,7 +70,7 @@ export default function MainAbout() {
           >
             {skills.map((skill) => (
               <div key={skill.logo} className="flex flex-col items-center gap-2 transition-all hover:scale-110">
-                <Image src={`/icons/${skill.logo}.svg`} alt={skill.name} width={45} height={45} priority />
+                <Image src={`/icons/techs/${skill.logo}.svg`} alt={skill.name} width={45} height={45} priority />
                 <Chip className="text-sm font-medium">{skill.name}</Chip>
               </div>
             ))}
@@ -88,79 +88,6 @@ export default function MainAbout() {
           </motion.div>
         </div>
       </div>
-
-
-      
-      {/* <div className='mt-12 flex flex-col md:flex-row items-center gap-12'>
-        <div className='w-1/2'>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto"
-          >
-            Passionate Frontend & Mobile Developer with expertise in crafting seamless user experiences. 
-            I love building high-performance web & mobile applications.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-6 flex flex-col md:flex-row gap-4 justify-center"
-          >
-            <Button size="lg" color="primary" className='border-0'>
-              <Image
-                src="/icons/download-light.svg"
-                // src={theme === 'dark' ? "/icons/download-light.svg" : "/icons/download-dark.svg"}
-                alt="download"
-                width={25}
-                height={25}
-                priority
-              />
-              <a href="/" download>
-                Download CV
-              </a>
-            </Button>
-          </motion.div>
-        </div>
-
-        
-        <div className='w-1/2'>
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8 flex flex-wrap justify-center gap-3"
-            >
-            {skills.map((skill) => (
-              <div key={skill.logo} className='flex flex-col items-center justify-center gap-4'>
-                <Image
-                  src={"/icons/" + skill.logo + ".svg"}
-                  alt={skill.name}
-                  width={45}
-                  height={45}
-                  priority
-                />
-                <Chip>
-                  {skill.name}
-                </Chip>
-              </div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-6 flex flex-col md:flex-row gap-4 justify-center"
-            >
-            <Button size="lg" variant="bordered">
-              <Link href="/about">See More Skills</Link>
-            </Button>
-          </motion.div>
-        </div>
-      </div> */}
     </section>
   );
 }

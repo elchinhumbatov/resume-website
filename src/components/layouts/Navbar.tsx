@@ -4,37 +4,41 @@ import { useState } from "react";
 import { Button } from "@heroui/react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+const navLinks = [
+  { id: 1, name: 'Home', path: '/' },
+  { id: 2, name: 'About', path: '/about' },
+  { id: 4, name: 'Experience', path: '/experience' },
+  { id: 3, name: 'Portfolio', path: '/#portfolio' },
+  { id: 5, name: 'Contact', path: '/#contact' }
+];
+
+
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
-  const pathname = usePathname()
+  // const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full h-15 bg-background shadow-md py-4">
       <nav className="container mx-auto flex items-center justify-between px-4">
       {/* Logo */}
-        <Link href="/" className="text-xl font-bold">
+        <Link href="/" className="text-xl font-bold group">
           Elchin
+          <span className="block h-0.5 w-0 bg-blue-500 group-hover:w-full transition-all duration-300" />
         </Link>
 
       {/* Navigation Links */}
         <div className="space-x-4 hidden md:flex">
-          <Link href="/about" className={`link underline-offset-4 ${pathname === '/about' ? 'underline' : 'hover:underline'}`}>
-            About
-          </Link>
-          <Link href="/experience" className={`link underline-offset-4 ${pathname === '/experience' ? 'underline' : 'hover:underline'}`}>
-            Experience
-          </Link>
-          <Link href="/portfolio" className={`link underline-offset-4 ${pathname === '/portfolio' ? 'underline' : 'hover:underline'}`}>
-            Portfolio
-          </Link>
-          <Link href="/contact" className={`link underline-offset-4 ${pathname === '/contact' ? 'underline' : 'hover:underline'}`}>
-            Contact
-          </Link>
+          {navLinks.map((navLink) => (
+            <Link key={navLink.id} href={navLink.path} className={`link group`}>
+              {navLink.name}
+              <span className="block h-0.5 w-0 bg-blue-500 group-hover:w-full transition-all duration-300" />
+            </Link>
+          ))}
         </div>
 
       {/* Theme & Mobile Menu Toggler */}
@@ -78,10 +82,9 @@ export default function Navbar() {
               className="absolute top-16 left-0 w-full bg-background border-t border-gray-200 dark:border-gray-800 md:hidden"
             >
               <div className="flex flex-col items-center py-4 space-y-4">
-                <Link href="/about" className="hover:underline" onClick={() => setIsOpen(false)}>About</Link>
-                <Link href="/experience" className="hover:underline" onClick={() => setIsOpen(false)}>Experience</Link>
-                <Link href="/portfolio" className="hover:underline" onClick={() => setIsOpen(false)}>Portfolio</Link>
-                <Link href="/contact" className="hover:underline" onClick={() => setIsOpen(false)}>Contact</Link>
+                {navLinks.map((navLink) => (
+                  <Link key={navLink.id} href={navLink.path} className="hover:underline" onClick={() => setIsOpen(false)}>{navLink.name}</Link>
+                ))}
               </div>
             </motion.div>
           )}

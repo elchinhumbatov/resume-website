@@ -3,17 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --background: #ededed;
+  --background: #c7c7c7dd;
   --foreground: #1c1c1c;
 }
 
 .dark {
   --background: #1c1c1c;
-  --foreground: #ededed;
+  --foreground: #c7c7c7dd;
 }
 
 html, body {
   @apply transition-colors duration-300;
+  scroll-behavior: smooth;
 }
 
 body {
