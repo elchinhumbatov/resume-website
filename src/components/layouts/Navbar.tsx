@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@heroui/react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-// import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -19,8 +18,14 @@ const navLinks = [
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
-  // const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full h-15 bg-background shadow-md py-4">
@@ -45,10 +50,15 @@ export default function Navbar() {
         <div className="flex items-center space-x-4">
           <Button
             variant="solid"
-            onPress={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className=""
+            onPress={() => setTheme(theme == "dark" ? "light" : "dark")}
+            className="min-w-10 p-0"
           >
-            {theme === "light" ? "🌙 Mode" : "☀️ Mode"}
+            <Image
+              src={theme === "light" ? "/icons/moon.svg" : "/icons/sun.svg"}
+              alt={theme === "light" ? "moon" : "sun"}
+              width={25}
+              height={25}
+            />
           </Button>
 
           <Button isIconOnly className="md:hidden" onPress={() => setIsOpen(!isOpen)}>
@@ -74,19 +84,22 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-16 left-0 w-full bg-background border-t border-gray-200 dark:border-gray-800 md:hidden"
-            >
-              <div className="flex flex-col items-center py-4 space-y-4">
-                {navLinks.map((navLink) => (
-                  <Link key={navLink.id} href={navLink.path} className="hover:underline" onClick={() => setIsOpen(false)}>{navLink.name}</Link>
-                ))}
-              </div>
-            </motion.div>
+            <>
+              <div onClick={() => setIsOpen(false)} className="fixed top-0 left-0 w-screen h-screen mt-[72px]"></div>
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="absolute top-[72px] left-0 w-full bg-background border-t border-gray-200 dark:border-gray-800 md:hidden"
+              >
+                <div className="flex flex-col items-center py-4 space-y-4">
+                  {navLinks.map((navLink) => (
+                    <Link key={navLink.id} href={navLink.path} className="hover:underline" onClick={() => setIsOpen(false)}>{navLink.name}</Link>
+                  ))}
+                </div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </nav>

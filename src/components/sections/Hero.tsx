@@ -4,10 +4,11 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Button } from '@heroui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Hero() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: '-70%' }); // Triggers every time it enters view
+  const isInView = useInView(ref, { margin: '-30%' }); // Triggers every time it enters view
 
   return (
     <section
@@ -23,7 +24,7 @@ export default function Hero() {
       >
         <Image
           src="/img/profile.jpeg"
-          alt="Profile Image"
+          alt="me"
           width={320}
           height={320}
           className="object-cover"
@@ -50,8 +51,8 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-6"
         >
-          <Button size="lg">
-            <a href="/portfolio" color='primary'>View My Work</a>
+          <Button size="lg" color='primary' variant="bordered">
+            <Link href="/#contact">Hire Me</Link>
           </Button>
         </motion.div>
       </motion.div>

@@ -10,14 +10,14 @@ const skills = [
   { name: 'React (85%)', logo: 'react' },
   { name: 'Next.js (85%)', logo: 'nextjs' },
   { name: 'TypeScript (75%)', logo: 'typescript' },
-  { name: 'Tailwind CSS (75%)', logo: 'tailwind' },
+  { name: 'Tailwind (75%)', logo: 'tailwind' },
   { name: 'React Native (80%)', logo: 'react-native' },
   { name: 'Angular (70%)', logo: 'angular' },
 ];
 
 export default function MainAbout() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: '-50%' });
+  const isInView = useInView(ref, { margin: '-30%' });
 
   return (
     <section
@@ -53,9 +53,9 @@ export default function MainAbout() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-6 flex justify-center md:justify-start"
           >
-            <Button size="lg" className="flex gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-md">
-              <Image src="/icons/download-light.svg" alt="download" width={22} height={22} priority />
-              <a href="/Elchin Humbatov.pdf" download>Download CV</a>
+            <Button size="lg" className="flex gap-2 px-6 py-3 rounded-lg shadow-md">
+              <Image src="/icons/download.svg" alt="download" width={22} height={22} priority />
+              <a href="/Elchin Humbatov.pdf" target='_blank'>Download CV</a>
             </Button>
           </motion.div>
         </div>
@@ -66,7 +66,7 @@ export default function MainAbout() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg grid grid-cols-2 lg:grid-cols-3 gap-6 place-items-center max-w-lg mx-auto"
+            className="p-6 bg-stone-200 dark:bg-gray-800 rounded-xl shadow-lg grid grid-cols-2 lg:grid-cols-3 gap-6 place-items-center max-w-lg mx-auto"
           >
             {skills.map((skill) => (
               <div key={skill.logo} className="flex flex-col items-center gap-2 transition-all hover:scale-110">
@@ -82,7 +82,7 @@ export default function MainAbout() {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="mt-6 flex justify-center"
           >
-            <Button size="lg" variant="bordered">
+            <Button size="lg" color='primary' variant="bordered">
               <Link href="/about">See More Skills</Link>
             </Button>
           </motion.div>

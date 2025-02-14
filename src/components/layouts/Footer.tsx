@@ -17,7 +17,7 @@ export default function Footer() {
       {/* Subtle Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-900 opacity-90" />
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between mt-4">
         {/* Name with Animated Underline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright Notice */}
-      <div className="relative z-10 mt-4 text-center text-sm text-gray-400">
+      <div className="relative z-10 mt-10 text-center text-sm text-gray-400">
         &copy; {new Date().getFullYear()} Elchin Humbatov. All rights reserved.
       </div>
     </footer>

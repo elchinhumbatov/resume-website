@@ -13,7 +13,7 @@ const experiences = [
 
 export default function MainExperience() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: '-50%' });
+  const isInView = useInView(ref, { margin: '-30%' });
 
   return (
     <section ref={ref} className="py-20 px-6 md:px-16">
@@ -35,7 +35,7 @@ export default function MainExperience() {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.8, delay: exp.id * 0.2 }}
-              className="p-6 w-full md:w-1/2 lg:w-1/3 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:scale-105 transition-all"
+              className="p-6 w-full md:w-1/2 lg:w-1/3 bg-stone-200 dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:scale-105 transition-all"
             >
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{exp.role}</h3>
               <p className="text-gray-600 dark:text-gray-300">{exp.company}</p>
@@ -51,7 +51,7 @@ export default function MainExperience() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-8 flex justify-center"
         >
-          <Button size="lg" variant="bordered">
+          <Button size="lg" color='primary' variant="bordered">
             <Link href="/experience">See More</Link>
           </Button>
         </motion.div>

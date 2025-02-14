@@ -23,7 +23,7 @@ const projects = [
 
 export default function MainPortfolio() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: '-50%' });
+  const isInView = useInView(ref, { margin: '-30%' });
 
   return (
     <section ref={ref} id='portfolio' className="py-20 px-6 md:px-16">

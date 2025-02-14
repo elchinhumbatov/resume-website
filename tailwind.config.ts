@@ -15,14 +15,36 @@ const config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         // Additional custom colors
-        primary: "#1DA1F2",
-        secondary: "#14171A",
+        // primary: "#1DA1F2",
+        // secondary: "#14171A",
       },
     },
   },
   darkMode: "class",
   plugins: [
-    heroui(),
+    heroui({
+      themes: {
+        light: {
+          colors: {
+            primary: {
+              DEFAULT: "#2196F3",
+              foreground: "var(--foreground)",
+            },
+            focus: "#6bb5ec",
+          },
+        },
+        dark: {
+          colors: {
+            primary: {
+              DEFAULT: "#1976D2",
+              // DEFAULT: "#6bb5ec",
+              foreground: "var(--foreground)",
+            },
+            focus: "#6bb5ec",
+          },
+        }
+      },
+    }),
   ],
 } satisfies Config;
 
