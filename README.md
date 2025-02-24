@@ -56,7 +56,7 @@ A modern, interactive resume website built with Next.js, Tailwind CSS, and Frame
 ---
 
 ### 🎯 Live Demo
-https://bit.ly/elchincv
+[Demo](https://elchinhumbatov.vercel.app/)
 
 ---
 
