@@ -51,7 +51,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-6"
         >
-          <Link href="/#contact" className='inline-block'>
+          <Link href="/#contact" role="button">
             <Button size="lg" color='primary' variant="bordered">
                 Hire Me
             </Button>

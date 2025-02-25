@@ -53,7 +53,7 @@ export default function MainAbout() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-6 flex justify-center md:justify-start"
           >
-            <a href="/Elchin Humbatov.pdf" target='_blank' className='inline-block'>
+            <a href="/Elchin Humbatov.pdf" download className='inline-block'>
               <Button size="lg" className="flex gap-2 px-6 py-3 rounded-lg shadow-md">
                 <Image src="/icons/download.svg" alt="download" width={22} height={22} priority />
                 Download CV
@@ -84,9 +84,9 @@ export default function MainAbout() {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="mt-6 flex justify-center"
           >
-            <Link href="/about" className='inline-block'>
+            <Link href="/about" className='inline-block' role="button">
               <Button size="lg" color='primary' variant="bordered">
-                See More Skillsx
+                See More Skills
               </Button>
             </Link>
           </motion.div>
