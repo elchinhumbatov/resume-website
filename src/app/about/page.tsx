@@ -113,10 +113,12 @@ export default function About() {
             <p className="text-lg mb-6">
             I&apos;m a Front-end Developer specializing in responsive and interactive web applications with React, Angular and Vue.js. I also have experience in mobile development using React Native. Passionate about innovation and constantly expanding my technical expertise.
             </p>
-            <Button size="lg" className="flex gap-2 px-6 py-3 rounded-lg shadow-md">
-              <Image src="/icons/download.svg" alt="download" width={22} height={22} priority />
-              <a href="/Elchin Humbatov.pdf" target="_blank">Download CV</a>
-            </Button>
+            <a href="/Elchin Humbatov.pdf" target="_blank" className="inline-block">
+              <Button size="lg" className="flex gap-2 px-6 py-3 rounded-lg shadow-md">
+                <Image src="/icons/download.svg" alt="download" width={22} height={22} priority />
+                Download CV
+              </Button>
+            </a>
           </motion.div>
         </div>
       </section>

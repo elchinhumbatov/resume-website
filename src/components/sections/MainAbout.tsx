@@ -53,10 +53,12 @@ export default function MainAbout() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-6 flex justify-center md:justify-start"
           >
-            <Button size="lg" className="flex gap-2 px-6 py-3 rounded-lg shadow-md">
-              <Image src="/icons/download.svg" alt="download" width={22} height={22} priority />
-              <a href="/Elchin Humbatov.pdf" target='_blank'>Download CV</a>
-            </Button>
+            <a href="/Elchin Humbatov.pdf" target='_blank' className='inline-block'>
+              <Button size="lg" className="flex gap-2 px-6 py-3 rounded-lg shadow-md">
+                <Image src="/icons/download.svg" alt="download" width={22} height={22} priority />
+                Download CV
+              </Button>
+            </a>
           </motion.div>
         </div>
 
@@ -82,9 +84,11 @@ export default function MainAbout() {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="mt-6 flex justify-center"
           >
-            <Button size="lg" color='primary' variant="bordered">
-              <Link href="/about">See More Skills</Link>
-            </Button>
+            <Link href="/about" className='inline-block'>
+              <Button size="lg" color='primary' variant="bordered">
+                See More Skillsx
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </div>
