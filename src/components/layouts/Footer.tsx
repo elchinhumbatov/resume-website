@@ -23,7 +23,7 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-xl font-bold relative group"
+          className="text-xl font-bold relative group mb-6 md:mb-0"
         >
           Elchin Humbatov
           <span className="block h-0.5 w-0 bg-blue-500 group-hover:w-full transition-all duration-300" />

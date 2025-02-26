@@ -44,8 +44,8 @@ export default function MainContact() {
             transition={{ duration: 0.8, delay: contact.id * 0.1 }}
             className="flex items-center gap-3 bg-stone-200 dark:bg-gray-700 shadow-md px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:scale-105"
           >
-            <Image src={`/icons/${contact.icon}.svg`} alt={contact.text} width={35} height={35} />
-            <span className="text-gray-700 dark:text-gray-300">{contact.text}</span>
+            <Image src={`/icons/${contact.icon}.svg`} alt={contact.text} width={33} height={33} />
+            <span className="text-sm md:text-lg">{contact.text}</span>
           </motion.a>
         ))}
       </div>

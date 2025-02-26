@@ -51,11 +51,20 @@ export default function MainExperience() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-8 flex justify-center"
         >
-          <Link href="/experience" className='inline-block' role="button">
+          <Button
+            as={Link}
+            color="primary"
+            href="/experience"
+            variant="bordered"
+            size="lg"
+          >
+            See More
+          </Button>
+          {/* <Link href="/experience" className='inline-block' role="button">
             <Button size="lg" color='primary' variant="bordered">
               See More
             </Button>
-          </Link>
+          </Link> */}
         </motion.div>
       </div>
     </section>
