@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
 const skills = [
   // Center - Main Skills (Largest Font Size)
@@ -111,14 +112,24 @@ export default function About() {
           >
             {/* <h2 className="text-3xl font-bold mb-4">About Me</h2> */}
             <p className="text-lg mb-6">
-            I&apos;m a Front-end Developer specializing in responsive and interactive web applications with React, Angular and Vue.js. I also have experience in mobile development using React Native. Passionate about innovation and constantly expanding my technical expertise.
+              I&apos;m a Front-end Developer specializing in responsive and interactive web applications with React, Angular and Vue.js. I also have experience in mobile development using React Native. Passionate about innovation and constantly expanding my technical expertise.
             </p>
-            <a href="/Elchin Humbatov.pdf" target="_blank" className="inline-block">
+            {/* <a href="/Elchin Humbatov.pdf" target="_blank" className="inline-block">
               <Button size="lg" className="flex gap-2 px-6 py-3 rounded-lg shadow-md">
                 <Image src="/icons/download.svg" alt="download" width={22} height={22} priority />
                 Download CV
               </Button>
-            </a>
+            </a> */}
+            <Button
+              as={Link}
+              href="/Elchin Humbatov.pdf"
+              target='_blank'
+              size="lg"
+              className="flex sm:inline-flex gap-2 px-6 py-3 rounded-lg shadow-md"
+            >
+              <Image src="/icons/download.svg" alt="arrow" width={22} height={22} priority />
+              Download CV
+            </Button>
           </motion.div>
         </div>
       </section>
