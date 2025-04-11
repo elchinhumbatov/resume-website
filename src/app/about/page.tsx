@@ -122,7 +122,7 @@ export default function About() {
             </a> */}
             <Button
               as={Link}
-              href="/Elchin Humbatov.pdf"
+              href="/Elchin_Humbatov.pdf"
               target='_blank'
               size="lg"
               className="flex sm:inline-flex gap-2 px-6 py-3 rounded-lg shadow-md"
