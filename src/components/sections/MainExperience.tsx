@@ -7,8 +7,8 @@ import { Button } from '@heroui/react';
 import Link from 'next/link';
 
 const experiences = [
-  { id: 0, role: 'Frontend Developer', company: 'benzeine LLC', year: '2022 - Present' },
-  { id: 1, role: 'Software Developer', company: 'eiLink R&D Center', year: '2021 - 2022' }
+  { id: 0, role: 'Frontend Developer', company: 'Morooq - Online IELTS Exam Platform', year: '2022 - Present' },
+  { id: 1, role: 'Software Developer', company: 'eiLink R&D - Top Research and Development Center', year: '2021 - 2022' }
 ];
 
 export default function MainExperience() {

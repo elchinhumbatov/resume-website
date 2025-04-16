@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 // Data for each section
 const experiences = [
   {
-    company: "Benzeine",
+    company: "Morooq - Online IELTS Exam Platform",
     role: "Frontend Developer",
     duration: "Mar 2021 - Freelance",
     description: [
@@ -14,7 +14,7 @@ const experiences = [
     ],
   },
   {
-    company: "Azercell",
+    company: "Azercell - Leading mobile operator of Azerbaijan",
     role: "End User Test specialist",
     duration: "Dec 2020 - Present",
     description: [
@@ -23,7 +23,7 @@ const experiences = [
     ],
   },
   {
-    company: "eiLink R&D Center",
+    company: "eiLink R&D - Top Research and Development Center",
     role: "Software Developer",
     duration: "Nov 2021 - Apr 2022",
     description: [
@@ -31,7 +31,7 @@ const experiences = [
     ],
   },
   {
-    company: "Azercell",
+    company: "Azercell - Leading mobile operator of Azerbaijan",
     role: "Corporate Customer Support",
     duration: "May 2016 - Dec 2020",
     description: [
