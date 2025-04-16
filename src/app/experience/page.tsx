@@ -10,7 +10,9 @@ const experiences = [
     duration: "Mar 2021 - Freelance",
     description: [
       "- Maintained a robust, IELTS-like web application using Angular, providing users with interactive learning modules and test simulations.", 
-      "- Built a scalable, Udemy-like mobile application with React Native, enabling cross-platform functionality and delivering a seamless learning experience to users.",
+      "- Improved customer retention rate by 35% through optimized front-end interfaces.",
+      "- Implement a scalable, Udemy-like mobile application with React Native, enabling cross-platform functionality and delivering a seamless learning experience to users.",
+      "- Reduced page load time by 20% by implementing advanced caching techniques and code optimization.",
     ],
   },
   {
@@ -27,7 +29,9 @@ const experiences = [
     role: "Software Developer",
     duration: "Nov 2021 - Apr 2022",
     description: [
-      "- Developed and maintained a responsive SPA dashboard in Angular, enhancing data visualization for end-users",
+      "- Developed and maintained a responsive SPA dashboard in Angular, enhancing data visualization for end-users.",
+      "- Boosted customer satisfaction scores by 25% by implementing responsive design best practices.",
+      "- Reduced average project completion time by 15% by implementing agile methodologies and efficient coding practices.",
     ],
   },
   {

@@ -17,9 +17,47 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elchin Humbatov",
-  description: "Frontend & Mobile Developer",
+  title: "Elchin Humbatov | Frontend & Mobile Developer",
+  description:
+    "Elchin Humbatov is a Frontend & Mobile Developer with 3+ years of experience building modern web and mobile apps using React, Next.js, and React Native. Open to freelance and relocation opportunities.",
+  keywords: [
+    "Frontend Developer",
+    "React Developer",
+    "Next.js Developer",
+    "React Native",
+    "JavaScript Developer",
+    "TypeScript Developer",
+    "Mobile App Developer",
+    "Web Developer Portfolio",
+    "Azerbaijan Developer",
+    "Remote Frontend Developer",
+    "Freelance React Developer",
+  ],
+  authors: [{ name: "Elchin Humbatov", url: "https://elchinhumbatov.vercel.app" }],
+  creator: "Elchin Humbatov",
+  metadataBase: new URL("https://elchinhumbatov.vercel.app"),
+  openGraph: {
+    title: "Elchin Humbatov | Frontend & Mobile Developer",
+    description:
+      "Explore the portfolio of Elchin Humbatov, a skilled Frontend & Mobile Developer with real-world experience in modern web technologies.",
+    url: "https://elchinhumbatov.vercel.app",
+    siteName: "Elchin Humbatov Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
 };
+
 
 export default function RootLayout({
   children,
