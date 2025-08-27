@@ -2,23 +2,25 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Mousewheel, Pagination } from 'swiper/modules';
-import Image from 'next/image';
 import Link from 'next/link';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import ProjectCard from '../ProjectCard';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Mousewheel, Pagination } from 'swiper/modules';
+// import Image from 'next/image';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
 
 
 const projects = [
-  { id: 1, title: 'Morooq', image: '/mocups/morooq.png', link: 'https://morooq.com/', techStack: ['angular', 'html', 'css', 'ts', 'ngrx'] },
-  { id: 2, title: 'TapOyren', image: '/mocups/tapoyren.png', link: 'https://tapoyren.com/', techStack: ['react', 'html', 'css', 'js', 'i18n'] },
-  { id: 3, title: 'DCS Dubai', image: '/mocups/dcs.png', link: 'https://dcsdubai.com/', techStack: ['vue', 'html', 'css', 'js', 'graph'] },
-  { id: 4, title: 'TapOyren App', image: '/mocups/tapoyren-app.png', link: 'https://tapoyren.com/', techStack: ['react', 'html', 'css', 'js', 'i18n'] },
-  { id: 5, title: 'E-Basket', image: '/mocups/drops.png', link: 'https://elchinhumbatov.github.io/e-basket/', techStack: ['angular', 'html', 'css', 'js'] },
-  { id: 6, title: 'Splitter', image: '/mocups/splitter.png', link: 'https://elchinhumbatov.github.io/splitter/', techStack: ['react', 'html', 'css', 'js', 'figma'] },
-  { id: 7, title: 'Flowers', image: '/mocups/flowers.png', link: 'https://elchinhumbatov.github.io/flowers/', techStack: ['react', 'html', 'css', 'js', 'redux'] },
-  { id: 8, title: 'Summer Fest', image: '/mocups/summerfest.png', link: 'https://elchinhumbatov.github.io/Summer-Fest/', techStack: ['html', 'css', 'sass', 'jquery'] },
+  { id: 1, title: 'Zaur Tango', image: '/mocups/zaurtango.png', link: 'https://www.zaurtango.com/', techStack: ['react', 'next.js', 'firebase', 'tailwind', 'ts'] },
+  { id: 2, title: 'Morooq', image: '/mocups/morooq.png', link: 'https://morooq.com/', techStack: ['angular', 'html', 'css', 'ts', 'ngrx'] },
+  { id: 3, title: 'TapOyren', image: '/mocups/tapoyren.png', link: 'https://tapoyren.com/', techStack: ['react', 'html', 'css', 'js', 'i18n'] },
+  { id: 4, title: 'DCS Dubai', image: '/mocups/dcs.png', link: 'https://dcsdubai.com/', techStack: ['vue', 'html', 'css', 'js', 'graph'] },
+  { id: 5, title: 'TapOyren App', image: '/mocups/tapoyren-app.png', link: 'https://tapoyren.com/', techStack: ['react', 'html', 'css', 'js', 'i18n'] },
+  { id: 6, title: 'E-Basket', image: '/mocups/drops.png', link: 'https://elchinhumbatov.github.io/e-basket/', techStack: ['angular', 'html', 'css', 'js'] },
+  { id: 7, title: 'Splitter', image: '/mocups/splitter.png', link: 'https://elchinhumbatov.github.io/splitter/', techStack: ['react', 'html', 'css', 'js', 'figma'] },
+  { id: 8, title: 'Flowers', image: '/mocups/flowers.png', link: 'https://elchinhumbatov.github.io/flowers/', techStack: ['react', 'html', 'css', 'js', 'redux'] },
+  { id: 9, title: 'Summer Fest', image: '/mocups/summerfest.png', link: 'https://elchinhumbatov.github.io/Summer-Fest/', techStack: ['html', 'css', 'sass', 'jquery'] },
 ];
 
 export default function MainPortfolio() {
@@ -35,8 +37,32 @@ export default function MainPortfolio() {
       >
         Portfolio
       </motion.h2>
+      <Link href="/portfolio" className="mt-4 block text-center md:text-left text-lg hover:underline">
+        View All Projects
+      </Link>
 
-      <div className="mt-12 h-[25vh] md:h-[50vh]">
+      <div className='flex justify-center gap-8 mt-12 flex-wrap'>
+        <ProjectCard
+          title={projects[0].title}
+          imageUrl={projects[0].image}
+          tags={projects[0].techStack}
+          link={projects[0].link}
+        />
+        <ProjectCard
+          title={projects[1].title}
+          imageUrl={projects[1].image}
+          tags={projects[1].techStack}
+          link={projects[1].link}
+        />
+        <ProjectCard
+          title={projects[2].title}
+          imageUrl={projects[2].image}
+          tags={projects[2].techStack}
+          link={projects[2].link}
+        />
+      </div>
+
+      {/* <div className="mt-12 h-[25vh] md:h-[50vh]">
         <Swiper
           direction='vertical'
           slidesPerView={1}
@@ -47,22 +73,22 @@ export default function MainPortfolio() {
           className="size-full max-w-4xl mx-auto"
         >
           {projects.map((project) => (
-            <SwiperSlide key={project.id} className='h-full flex justify-center items-center'>
+            <SwiperSlide key={projects[0].id} className='h-full flex justify-center items-center'>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.8 }}
                 className="relative size-full rounded-xl overflow-hidden shadow-lg"
               >
-                <Image src={project.image} alt={project.title} layout="fill" objectFit="cover" className='block w-full' />
+                <Image src={projects[0].image} alt={projects[0].title} layout="fill" objectFit="cover" className='block w-full' />
                 <div className="flex absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 text-center m-auto">
                   <div className='w-1/3'>
-                    <h3 className="md:text-xl font-semibold">{project.title}</h3>
-                    <Link target='_blank' href={project.link} className="text-sm underline">View Project</Link>
+                    <h3 className="md:text-xl font-semibold">{projects[0].title}</h3>
+                    <Link target='_blank' href={projects[0].link} className="text-sm underline">View Project</Link>
                   </div>
                   <div className='flex justify-center items-center w-2/3'>
                     <h3 className="hidden md:block md:text-xl font-semibold">Tech stack: </h3>
-                    {project.techStack.map((tech) => (
+                    {projects[0].techStack.map((tech) => (
                       <div key={tech} className='w-[30px] h-[30px] p-1 m-1'>
                         <Image src={`/img/tech-logo/${tech}.png`} alt={tech} width={30} height={30} />
                       </div>
@@ -74,7 +100,7 @@ export default function MainPortfolio() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </div> */}
     </section>
   );
 }
